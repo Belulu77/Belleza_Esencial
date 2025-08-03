@@ -162,6 +162,7 @@ realizados.
 ○ El sistema debe permitir al administrador actualizar el estado de un
 pedido (ej. &quot;Pendiente&quot;, &quot;Enviado&quot;, &quot;Entregado&quot;).
 ○ El sistema debe permitir al administrador ver los detalles de cada pedido.
+
 -----------------------------------------------------------------------------------------------------
 4. Interfaces externas
    
