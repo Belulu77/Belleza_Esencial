@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - belleza esencial</title>
+  <!-- Enlace al CDN de Tailwind CSS para todos los estilos -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Importación de la fuente Inter para un diseño consistente */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 text-gray-800">
+
+  <!-- Encabezado de la página. Incluye la navegación principal. -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="text-3xl font-extrabold text-pink-600">
+        belleza esencial
+      </div>
+      <!-- Menú de navegación para escritorio -->
+      <nav class="hidden md:flex items-center space-x-6">
+            <a href="inicio.html" class="block text-gray-700 hover:text-pink-500 transition-colors duration-200 px-4 py-2 text-lg font-medium">Inicio</a>
+      <a href="productos.html" class="block text-gray-700 hover:text-pink-500 transition-colors duration-200 px-4 py-2 text-lg font-medium">Productos</a>
+      <a href="categorias.html" class="block text-gray-700 hover:text-pink-500 transition-colors duration-200 px-4 py-2 text-lg font-medium">Categorías</a>
+      <a href="contacto.html" class="block text-gray-700 hover:text-pink-500 transition-colors duration-200 px-4 py-2 text-lg font-medium">Contacto</a>
+      </nav>
+      <!-- Iconos de usuario y carrito -->
+      <div class="flex items-center space-x-4">
+        <!-- SVG para ícono de búsqueda -->
+        <button class="text-gray-600 hover:text-pink-500 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <!-- SVG para ícono de usuario -->
+        <a href="login.html" class="text-gray-600 hover:text-pink-500 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+        <!-- SVG para ícono de carrito de compras -->
+
+        <a href="carrito.html" class="text-pink-600 hover:text-pink-500 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+        </a>
+        <!-- Botón para menú móvil -->
+        <button id="menu-btn" class="md:hidden text-gray-600 hover:text-pink-500 transition-colors">
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Menú desplegable para móvil -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg py-2">
+      <a href="inicio.html" class="block text-gray-700 hover:text-pink-500 transition-colors duration-200 px-4 py-2 text-lg font-medium">Inicio</a>
+      <a href="productos.html" class="block text-gray-700 hover:text-pink-500 transition-colors duration-200 px-4 py-2 text-lg font-medium">Productos</a>
+      <a href="categorias.html" class="block text-gray-700 hover:text-pink-500 transition-colors duration-200 px-4 py-2 text-lg font-medium">Categorías</a>
+      <a href="contacto.html" class="block text-gray-700 hover:text-pink-500 transition-colors duration-200 px-4 py-2 text-lg font-medium">Contacto</a>
+    </div>
+  </header>
+
+  <!-- Contenido principal de la página de inicio -->
+  <main class="container mx-auto px-4 py-8">
+    <!-- Sección Hero -->
+    <div class="relative bg-gradient-to-r from-pink-100 to-rose-100 rounded-3xl p-8 md:p-16 text-center text-gray-900 overflow-hidden">
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+        Descubre tu <span class="text-pink-600">belleza</span> esencial
+      </h1>
+      <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
+        Productos de alta calidad para el cuidado de la piel, maquillaje y fragancias.
+      </p>
+      <a href="productos.html" class="mt-8 inline-block px-8 py-3 bg-pink-600 text-white font-bold text-lg rounded-full shadow-lg hover:bg-pink-700 transition-all duration-300 transform hover:scale-105">
+        Comprar ahora
+      </a>
+      <div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style="background-image: url('https://placehold.co/1200x600/FFC0CB/FFFFFF?text=Hero+Image');">
+      </div>
+    </div>
+
+    <!-- Sección de Categorías -->
+    <section class="mt-12">
+      <h2 class="text-3xl font-bold text-gray-800 text-center mb-6">Explora por Categoría</h2>
+      <div id="category-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Las categorías se cargarán aquí con JS -->
+      </div>
+    </section>
+
+    <!-- Sección de Productos Destacados -->
+    <section class="mt-12">
+      <h2 class="text-3xl font-bold text-gray-800 text-center mb-6">Productos Destacados</h2>
+      <div id="featured-products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Los productos se cargarán aquí con JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <p class="mb-4 text-lg font-bold">belleza esencial</p>
+      <p>&copy; 2025 Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // app.js
+    // Lógica para el menú móvil
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        if (menuBtn && mobileMenu && menuIcon && closeIcon) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                menuIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+        }
+
+        // Datos de prueba (simulan una base de datos)
+        const categoriesData = [
+            { id: 1, nombre: 'Cuidado Facial', url: 'categorias.html' },
+            { id: 2, nombre: 'Maquillaje', url: 'categorias.html' },
+            { id: 3, nombre: 'Fragancias', url: 'categorias.html' },
+            { id: 4, nombre: 'Cuidado Corporal', url: 'categorias.html' },
+        ];
+        
+        const featuredProductsData = [
+            { id: 1, nombre: 'Crema Hidratante de Día', precio: 25.50, url_imagen: 'https://placehold.co/400x400/FFC0CB/FFFFFF?text=Crema' },
+            { id: 2, nombre: 'Base de Maquillaje', precio: 35.00, url_imagen: 'https://placehold.co/400x400/FFA07A/FFFFFF?text=Base' },
+            { id: 3, nombre: 'Perfume Floral EdP', precio: 59.99, url_imagen: 'https://placehold.co/400x400/ADD8E6/FFFFFF?text=Perfume' },
+            { id: 4, nombre: 'Exfoliante Corporal', precio: 18.75, url_imagen: 'https://placehold.co/400x400/90EE90/FFFFFF?text=Exfoliante' },
+        ];
+
+        // Lógica para renderizar categorías y productos
+        const categoryList = document.getElementById('category-list');
+        const featuredProducts = document.getElementById('featured-products');
+
+        categoriesData.forEach(cat => {
+            const catItem = document.createElement('a');
+            catItem.href = cat.url;
+            catItem.className = 'bg-white rounded-xl shadow-md p-6 flex items-center justify-between hover:shadow-xl transition-all duration-300 transform hover:scale-105';
+            catItem.innerHTML = `
+                <span class="text-xl font-semibold text-gray-700">${cat.nombre}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right text-pink-500"><path d="m9 18 6-6-6-6"/></svg>
+            `;
+            categoryList.appendChild(catItem);
+        });
+
+        featuredProductsData.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden';
+            productCard.innerHTML = `
+                <img src="${product.url_imagen}" alt="${product.nombre}" class="w-full h-52 object-cover object-center" onerror="this.onerror=null;this.src='https://placehold.co/400x400/f0f0f0/888888?text=Imagen+no+disponible';">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800">${product.nombre}</h3>
+                    <p class="mt-2 text-2xl font-bold text-pink-600">$${product.precio.toFixed(2)}</p>
+                    <button class="mt-4 w-full bg-pink-500 text-white py-2 px-4 rounded-lg font-bold hover:bg-pink-600 transition-colors duration-200">
+                        Añadir al carrito
+                    </button>
+                </div>
+            `;
+            featuredProducts.appendChild(productCard);
+        });
+    });
+  </script>
+</body>
+</html>

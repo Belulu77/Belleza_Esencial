@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras - belleza esencial</title>
+  <!-- Enlace al CDN de Tailwind CSS para todos los estilos -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Importación de la fuente Inter para un diseño consistente */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 text-gray-800">
+
+  <!-- Encabezado de la página. Incluye la navegación principal. -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      
+      <!-- Enlace directo a la página de inicio -->
+      <a href="inicio.html" class="text-gray-600 hover:text-pink-500 transition-colors" title="Volver a Inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </a>
+
+      <div class="text-3xl font-extrabold text-pink-600">
+        belleza esencial
+      </div>
+      <!-- Menú de navegación para escritorio -->
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="inicio.html" class="text-gray-700 hover:text-pink-500 transition-colors duration-200 px-4 py-2 text-lg font-medium">Inicio</a>
+        <a href="productos.html" class="text-gray-700 hover:text-pink-500 transition-colors duration-200 px-4 py-2 text-lg font-medium">Productos</a>
+        <a href="categorias.html" class="text-gray-700 hover:text-pink-500 transition-colors duration-200 px-4 py-2 text-lg font-medium">Categorías</a>
+        <a href="contacto.html" class="text-gray-700 hover:text-pink-500 transition-colors duration-200 px-4 py-2 text-lg font-medium">Contacto</a>
+      </nav>
+      <!-- Iconos de usuario y carrito -->
+      <div class="flex items-center space-x-4">
+        <!-- SVG para ícono de búsqueda -->
+        <button class="text-gray-600 hover:text-pink-500 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <!-- SVG para ícono de usuario -->
+        <a href="login.html" class="text-gray-600 hover:text-pink-500 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+        <!-- SVG para ícono de carrito de compras -->
+        <a href="carrito.html" class="text-pink-600 hover:text-pink-500 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+        </a>
+        <!-- Botón para menú móvil -->
+        <button id="menu-btn" class="md:hidden text-gray-600 hover:text-pink-500 transition-colors">
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Menú desplegable para móvil -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg py-2">
+      <a href="inicio.html" class="block text-gray-700 hover:text-pink-500 transition-colors duration-200 px-4 py-2 text-lg font-medium">Inicio</a>
+      <a href="productos.html" class="block text-gray-700 hover:text-pink-500 transition-colors duration-200 px-4 py-2 text-lg font-medium">Productos</a>
+      <a href="categorias.html" class="block text-gray-700 hover:text-pink-500 transition-colors duration-200 px-4 py-2 text-lg font-medium">Categorías</a>
+      <a href="contacto.html" class="block text-gray-700 hover:text-pink-500 transition-colors duration-200 px-4 py-2 text-lg font-medium">Contacto</a>
+    </div>
+  </header>
+
+  <!-- Contenido principal del carrito -->
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-extrabold text-center text-pink-600 mb-8">Tu Carrito</h1>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Sección de productos en el carrito -->
+      <div id="cart-items" class="lg:col-span-2 space-y-6">
+        <!-- Los productos del carrito se cargarán aquí con JS -->
+      </div>
+
+      <!-- Resumen del carrito -->
+      <div id="cart-summary" class="bg-white rounded-xl shadow-lg p-6 h-fit">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Resumen de la Compra</h2>
+        <div class="space-y-2 text-gray-600">
+          <div class="flex justify-between">
+            <span>Subtotal:</span>
+            <span id="subtotal" class="font-semibold">$0.00</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Envío:</span>
+            <span id="shipping" class="font-semibold">$5.00</span>
+          </div>
+          <div class="border-t border-gray-200 mt-4 pt-4 flex justify-between text-xl font-bold text-gray-900">
+            <span>Total:</span>
+            <span id="total">$0.00</span>
+          </div>
+        </div>
+        <button class="mt-6 w-full py-3 bg-pink-600 text-white font-bold text-lg rounded-lg shadow-md hover:bg-pink-700 transition-colors duration-200">
+          Proceder al pago
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <p class="mb-4 text-lg font-bold">belleza esencial</p>
+      <p>&copy; 2025 Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Lógica para el menú móvil
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        if (menuBtn && mobileMenu && menuIcon && closeIcon) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                menuIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+        }
+    });
+
+    // Datos de prueba para el carrito
+    const cartItemsData = [
+      { id: 1, nombre: 'Crema Hidratante de Día', precio: 25.50, cantidad: 1, url_imagen: 'https://placehold.co/400x400/FFC0CB/FFFFFF?text=Crema' },
+      { id: 2, nombre: 'Base de Maquillaje', precio: 35.00, cantidad: 2, url_imagen: 'https://placehold.co/400x400/FFA07A/FFFFFF?text=Base' },
+      { id: 3, nombre: 'Exfoliante Corporal', precio: 18.75, cantidad: 1, url_imagen: 'https://placehold.co/400x400/90EE90/FFFFFF?text=Exfoliante' },
+    ];
+
+    // Función para renderizar los productos del carrito
+    function renderCartItems() {
+      const cartItemsContainer = document.getElementById('cart-items');
+      cartItemsContainer.innerHTML = ''; // Limpiar el contenedor antes de renderizar
+      
+      let subtotal = 0;
+
+      cartItemsData.forEach(item => {
+        const itemTotal = item.precio * item.cantidad;
+        subtotal += itemTotal;
+
+        const cartItemCard = document.createElement('div');
+        cartItemCard.className = 'flex items-center bg-white rounded-xl shadow-lg p-4';
+        cartItemCard.innerHTML = `
+          <img src="${item.url_imagen}" alt="${item.nombre}" class="w-24 h-24 rounded-lg object-cover mr-4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/f0f0f0/888888?text=Imagen+no+disponible';">
+          <div class="flex-grow">
+            <h3 class="text-lg font-bold text-gray-800">${item.nombre}</h3>
+            <p class="text-gray-600 mt-1">Precio: $${item.precio.toFixed(2)}</p>
+            <p class="text-gray-600">Cantidad: ${item.cantidad}</p>
+          </div>
+          <div class="text-right">
+            <p class="text-xl font-bold text-pink-600">$${itemTotal.toFixed(2)}</p>
+          </div>
+        `;
+        cartItemsContainer.appendChild(cartItemCard);
+      });
+
+      // Actualizar el resumen del carrito
+      updateCartSummary(subtotal);
+    }
+
+    // Función para actualizar el resumen del carrito
+    function updateCartSummary(subtotal) {
+      const shipping = 5.00; // Costo de envío de ejemplo
+      const total = subtotal + shipping;
+
+      document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+      document.getElementById('shipping').textContent = `$${shipping.toFixed(2)}`;
+      document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+    }
+
+    // Llamar a la función para renderizar los productos al cargar la página
+    renderCartItems();
+  </script>
+</body>
+</html>
